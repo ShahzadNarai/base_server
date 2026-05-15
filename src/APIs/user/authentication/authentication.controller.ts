@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express'
 import httpResponse from '../../../handlers/httpResponse'
 import responseMessage from '../../../constant/responseMessage'
 import httpError from '../../../handlers/errorHandler/httpError'
-import { IConfirmRegistration, ILogin, ILoginRequest, IRegister, IRegisterRequest } from './types/authentication.interface'
+import { IConfirmRegistration, ILogin, ILoginRequest, IRegister, IRegisterRequest} from './types/authentication.interface'
 import { validateSchema } from '../../../utils/joi-validate'
 import { loginSchema, registerSchema } from './validation/validation.schema'
 import { accountConfirmationService, loginService, registrationService } from './authentication.service'
@@ -130,5 +130,6 @@ export default {
         } catch (error) {
             httpError(next, error, request, 500)
         }
-    })
+    }),
+   
 }
